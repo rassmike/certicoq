@@ -54,6 +54,7 @@ $(GLUE) $(CFILES): tests.v
 %_opt4: $(TEST_PREQS) CertiCoq.Tests.tests.%_opt4.c ; $(TEST_RECIPE)
 %_opt5: $(TEST_PREQS) CertiCoq.Tests.tests.%_opt5.c ; $(TEST_RECIPE)
 
+$(TESTS): $(GLUE) $(CFILES)
 $(TESTS):%: %_opt %_opt1 %_opt2 %_opt3 %_opt4 %_opt5
 
 run: run.sh exec
